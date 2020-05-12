@@ -10,7 +10,7 @@ RUN adduser --disabled-password --gecos '' --uid 2917 --gid 2917 user
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
+RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn libicu-dev mysql-client curl nano && rm -rf /var/lib/apt/lists/*
 
 ENV INSTALL_PATH /app
 RUN mkdir -p $INSTALL_PATH
