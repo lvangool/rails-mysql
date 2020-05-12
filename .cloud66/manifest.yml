@@ -1,0 +1,3 @@
+rails:
+  configuration:
+    cloud_image: cloud-image
