@@ -21,7 +21,7 @@ RUN gem install bundler
 
 # install gems
 COPY Gemfile* $INSTALL_PATH/
-RUN bundle install
+RUN bundle install --without development test
 
 # install yarn packages
 COPY package.json yarn.lock $INSTALL_PATH/
